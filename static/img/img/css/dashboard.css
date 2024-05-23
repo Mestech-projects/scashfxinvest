@@ -1,0 +1,105 @@
+body {
+ 
+  font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0;
+    background-image: url('/static/img/img/body/login.jpg'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+  
+  }
+  
+  .container {
+    
+    max-height: 1000px; 
+    transition: max-height 0.5s;
+    margin: 50px;
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    align-items: center;
+  }
+  
+  h1 {
+    color: #01126e;
+  
+   
+  }
+  
+  .card {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fdfdfd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    color: black;
+    
+  }
+  
+  h2{
+    color: #141310;
+  }
+  
+  .alert {
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .alert-success {
+    background-color: #D4EDDA;
+    color: #155724;
+  }
+  
+  .alert-danger {
+    background-color: #F8D7DA;
+    color: #721C24;
+  }
+  
+  .btn {
+    margin-top: 10px;
+    border-radius: 20px;
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #21209C;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+   
+  }
+  
+  button:hover {
+    background-color: #DAA20B;
+  }
+  
+  .links-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    
+  }
+  
+  .btn-success {
+    background-color:  #ff0000;
+    color: #FFFFFF;
+    
+  }
+  li{
+    list-style-type:none;
+  }
+  /* Media query for screens smaller than 768px (typical tablets and phones) */
+  @media only screen and (max-width: 768px) {
+    .container {
+      max-width: 100%; /* Adjusted max-width to 100% for responsiveness */
+    }
+  
+    button {
+      width: 100%; /* Adjusted width to 100% for responsiveness */
+    }
+  }
+  

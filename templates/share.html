@@ -1,0 +1,44 @@
+
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share</title>
+  <link rel="stylesheet" href="/static/img/img/css/dashboards.css">
+    <link rel="stylesheet" href="/static/img/img/css/app.css">
+</head>
+<body style="background-image: url('/static/img/img/IMG-Django/minimalistic.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <div class="container">
+        <h2>Share this link:</h2>
+        <p>Your Referral Code: {{ request.session.referal_code }}</p>
+        <p id="shareLink"></p>
+        <button onclick="generateShareableLink()">Generate & copy Link</button>
+
+        <script>
+             function generateShareableLink() {
+                let elm = document.getElementById('shareLink');
+                let link = '{{ link }}';
+                elm.innerHTML = link;
+                elm.style.display = 'block';
+
+                // Create a temporary input element to copy the link
+                let tempInput = document.createElement("input");
+                tempInput.value = link;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                tempInput.setSelectionRange(0, 99999);
+                document.execCommand("copy");
+                document.body.removeChild(tempInput);
+                alert("Link copied to clipboard!");
+                }
+
+        </script>
+
+
+    </div>
+</body>
+</html>
+
+

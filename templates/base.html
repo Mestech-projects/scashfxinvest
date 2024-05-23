@@ -1,0 +1,42 @@
+{% if not request.session %}
+    <script>
+        window.location = "{% url 'login' %}";
+    </script>
+{% else %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>{% block title %}My Site{% endblock %}</title>
+    </head>
+    <body>
+        <div id="content">
+            {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div style="width: 100%; padding: 8px 8px 8px 16px; background-color: green; color: white" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- Display error message if any -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'error' %}
+                                <div style="width: 100%; padding: 8px 8px 8px 16px; background-color: red; color: white" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+            {% block content %}{% endblock %}
+        </div>
+
+    </body>
+    </html>
+{% endif %}

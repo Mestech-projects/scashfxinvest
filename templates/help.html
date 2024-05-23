@@ -1,0 +1,42 @@
+<!-- Your HTML file -->
+
+
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Earnings</title>
+  <link rel="stylesheet" href="/static/img/img/css/dashboards.css">
+
+  <link rel="stylesheet" href="/static/img/img/css/earning.css">
+  <link rel="stylesheet" href="/static/img/img/css/app.css">
+</head>
+<body style="padding: 10px">
+
+ <h3>Help Desk</h3>
+
+  <div class="container" style="display: flex; cursor:pointer;">
+      <img src="/static/img/img/header/telegram.png" style="width: 30px; height: 30px; margin-right: 20px">
+      <p>Contact Support</p>
+      <a href="https://t.me/reifcare" style="display: none;"></a>
+  </div>
+    <div class="container" style="display: flex; cursor:pointer;">
+    <img src="/static/img/img/header/telegram.png" style="width: 30px; height: 30px; margin-right: 20px">
+      <p>Join Telegram Group</p>
+      <a href="https://t.me/+8qDU8NG7EtowMDNk" style="display: none;"></a>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+ <script type="text/javascript">
+   $(document).ready(function(){
+    $(".container").click(function(){
+      let link = $(this).find('a')
+      window.location.href = link.attr('href')
+    })
+   })
+ </script>
+</body>
+</html>
+

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Customer Deposit</title>
+   <style type="text/css">
+      body {
+         background: linear-gradient(to bottom, #2ecc71, #4caf50, #8bc34a, #cddc39);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         height: auto;
+         margin: 10px auto;
+         font-family: Arial, sans-serif;
+      }
+
+      .card {
+         background-color: white;
+         padding: 20px;
+         border-radius: 1px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         width: 80%;
+      }
+
+      .content {
+         text-align: left;
+      }
+
+      .details {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+      }
+
+      .copy-btn {
+         cursor: pointer;
+         color: blue;
+         text-decoration: none;
+      }
+
+      /* Style for the input */
+      input[type="text"] {
+         width: calc(100% - 10px);
+         padding: 8px;
+         margin-top: 10px;
+         border-radius: 4px;
+         border: 1px solid #ccc;
+         box-sizing: border-box;
+      }
+
+      /* Style for the "I have already paid" button */
+      .paid-button {
+         width: 100%;
+         padding: 10px;
+         margin-top: 15px;
+         border: none;
+         border-radius: 4px;
+         background-color: lightblue;
+         color: white;
+         font-weight: bold;
+         cursor: pointer;
+      }
+      .divider{
+         width: 100%;
+         border: 2px dashed gainsboro;
+         height: auto;
+         margin: 10px 0px;
+      }
+
+      /* Media Queries */
+@media screen and (min-width: 768px) {
+
+      .card {
+         width: 35%;
+      }
+
+
+}
+   </style>
+</head>
+<body oncontextmenu="return false;">
+   <div class="card">
+      <center>
+         <img src="/static/mpesa.png" style="width: 100px; height: 100px;">
+         <img src="/static/img/binance.png" style="width: 100px; height: 100px;">
+      </center>
+      <!-- <hr> -->
+      <div class="divider"></div>
+      <div class="content">
+         <h6>OrderId: <strong>9948573434873483478347</strong></h6>
+         <p style="background: green; color: white; padding: 10px; ">If you do not receive the payment, please contact the platform's exclusive customer service</p>
+         <!-- <p><span style="color: red">Repeat code scanning cannot account, please only pay once</span></p> -->
+
+         <div class="details">
+            <div class="amount">
+               <p><strong>Pay Amount</strong></p>
+               <p>KES {{ amount }}</p>
+               <span class="copy-btn" onclick="">---</span>
+            </div>
+
+            <div class="send-to">
+               <p><strong>Send Money</strong></p>
+               <p>{{ phone }}</p>
+               <span class="copy-btn" onclick="copyText('{{ phone }}')">Copy</span>
+               <p><strong>Binance Address</strong></p>
+               <p>{{ binance }}</p>
+               <span class="copy-btn" onclick="copyText('{{ binance }}')">Copy</span>
+            </div>
+         </div>
+         <strong>
+            <br>
+            <span style="color: red; display: block;">Transaction id is required</span>*
+            <i><strong>NB: </strong>Make sure the reference number hasnt been used, Dont Copy&Paste.  </i>
+         </strong>
+         <form method="POST" action="{% url 'mpesapay' %}">
+              {% csrf_token %}
+             <!-- Full-width input -->
+            <input type="text" readonly name="amount" placeholder="Mpesa Reference Number eg RLV9QAWY70" value="{{ amount }}">
+            <input type="text" id="reference" required placeholder="Transaction Reference eg RLV9QAWY70" name="paymentReference">
+
+            <!-- "I have already paid" button -->
+            <button class="paid-button">I have already paid</button>
+
+         </form>
+        <br>
+         <div class="divider"></div>
+         <h4 style="color: darkblue;">After deposit wait patiently!</h4>
+      </div>
+   </div>
+
+<script>
+   function copyText(text) {
+      navigator.clipboard.writeText(text);
+      alert("Copied")
+   }
+</script>
+
+
+</body>
+</html>

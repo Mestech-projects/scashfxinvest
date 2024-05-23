@@ -1,0 +1,50 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spin Wheel Game</title>
+    <link rel="stylesheet" href="/static/spin/spin.css">
+    <link rel="stylesheet" href="/static/img/img/css/app.css">
+</head>
+<body>
+  
+<h1>Comming Soon ........</h1>
+    <footer>
+        <div class="foot_bo">
+        <a href="{% url 'mysite:invest'%}">
+            <img src="/static/img/img/footer/home.png"/>
+            <p class="xz">Home</p>
+        </a>
+    </div>
+            <div class="foot_bo">
+              <a href="{% url 'mysite:earnings' %}">
+            <img src="/static/img/img/footer/earning.png"/>
+            <p>Earnings</p>
+        </a>
+    </div>
+        <div class="foot_bo">
+    <a href="{% url 'mysite:spin' %}">
+        <img src="/static/img/img/footer/game.png" class="game1"/>
+        <p>Game</p>
+    </a>
+</div>
+            <div class="foot_bo">
+        <a href="{% url 'mysite:share' %}">
+            <img src="/static/img/img/footer/share.png"/>
+            <p>Share</p>
+        </a>
+    </div>
+   
+        <div class="foot_bo">
+        <a href="{% url 'mysite:user_dashboard' %}">
+            <img src="/static/img/img/footer/mine.png"/>
+            <p>My</p>
+        </a>
+    </div>
+    
+</footer>
+</body>
+</html>

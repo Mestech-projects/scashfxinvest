@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=a, initial-scale=1.0">
+    <title>Statements</title>
+    <link rel="stylesheet" href="/static/img/img/css/app.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+<!--        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>-->
+
+
+</head>
+
+<body class="login-body" style="background-image: url('/static/img/img/IMG-Django/mars.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+<div class="container mt-5">
+    <h5>My statement</h5>
+    <div class="card">
+    <div class="card-body">
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="deposit" role="tabpanel" aria-labelledby="deposit-tab">
+                {% if transactions %}
+                    <div class="">
+                        {% for transaction in transactions %}
+                            <div class="card" style="width: 100%; cursor: pointer; margin: 3px 0px">
+                                <div class="card-body">
+<!--                                    <h6 class="card-subtitle mb-2 text-muted">{{ transaction.tran_desc }}</h6>-->
+                                    <h5 class="card-title">
+                                        {% if transaction.type == "CR" %}
+                                            <span style="color: green;">+{{ transaction.amount }}</span>
+                                        {% else %}
+                                            <span style="color: red;">-{{ transaction.amount }}</span>
+                                        {% endif %}
+                                    </h5>
+                                    <p class="card-text">{{ transaction.transaction_date }}</p>
+                                    <div>
+
+                                        {% if transaction.status == 1 %}
+                                            <span style="color: red;">Pending</span>
+                                        {% else %}
+                                            <span style="color: green;">Completed</span>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p>No transactions available.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

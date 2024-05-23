@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>User Investments</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Investment Option</th>
+        <th>Amount</th>
+        <th>Daily Income</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for investment in investments %}
+        <tr>
+          <td>{{ investment.user_profile.user.username }}</td>
+          <td>{{ investment.investment_option.amount }} KES - {{ investment.investment_option.daily_income }} KES daily income</td>
+          <td>{{ investment.investment_option.amount }}</td>
+          <td>{{ investment.investment_option.daily_income }}</td>
+          <td>{{ investment.created_at }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

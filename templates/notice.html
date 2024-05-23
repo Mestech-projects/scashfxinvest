@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f3f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 120vh;
+            margin: 0;
+        }
+
+        .card {
+            background-color: #fdfdfd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 800px;
+            text-align: left;
+        }
+
+        .card h2 {
+            color: #01126e;
+        }
+
+        .card p {
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #ff4d17;
+            font-weight: bold;
+        }
+
+        .button {
+            background-color: #01126e;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+    </style>
+    <title>Refize Company Notice</title>
+</head>
+<body style="background-image: url('/static/IMG-Django/mars.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <div class="card">
+        <h2>Refize organization Notice: How It Works</h2>
+        <hr>
+
+        <p><span class="highlight">Earning Bonuses with Every Investment:</span> At Refize Company, we value your investments and reward your commitment. For every investment you make, you earn a bonus based on the level of your investment. The higher your investment, the greater your bonus! It's our way of saying thank you for choosing Refize.</p>
+
+        <p><span class="highlight">Withdrawal Minimum:</span> The minimum withdrawal amount is <span class="highlight">300 Ksh</span>. Once your earnings reach this threshold, you can easily withdraw your funds. We believe in giving you flexibility and control over your finances.</p>
+
+        <p><span class="highlight">Minimum Deposit:</span> To get started on your investment journey, the minimum deposit is <span class="highlight">1200 Ksh</span>. This allows you to begin your investment with ease and start earning bonuses right away.</p>
+
+        <p><span class="highlight">Daily Spin Opportunity:</span> Enjoy the excitement of our daily spin! Each day, you have the chance to spin and win amazing rewards. It's a fun way to add a little extra to your daily earnings. Remember, you get one spin per day.</p>
+
+        <p><span class="highlight">Referral Program - Two Tiers:</span> Our referral program is designed to reward you for spreading the word about Refize Company.</p>
+
+        <ul>
+            <li><span class="highlight">First Tier (1st Referral):</span> Earn a whopping 25% bonus when you refer someone for the first time. It's a generous reward for introducing others to the benefits of Refize.</li>
+            <li><span class="highlight">Second Tier (2nd Referral):</span> Keep the rewards coming! When you refer someone for the second time, enjoy a 10% bonus. We appreciate your continued support and trust in our platform.</li>
+        </ul>
+
+        <p><span class="highlight">Contact Our Support on Telegram:</span> Need assistance or have questions? Our dedicated support team is here to help. Click the "Service" button to reach us on Telegram. We are committed to providing prompt and helpful support to ensure your experience with Refize is seamless.</p>
+<a href="{%url 'mysite:service'%}">
+    <button class="button">Service</button>
+</a>
+     
+    </div>
+</body>
+</html>

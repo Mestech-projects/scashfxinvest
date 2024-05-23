@@ -1,0 +1,8 @@
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+  <h1>Transaction Message Submitted</h1>
+  <p>Your transaction message has been submitted successfully.</p>
+  <!-- You can add more details or instructions based on your needs -->
+  <p><a href="{% url 'mysite:user_dashboard' %}">Go back to User Dashboard</a></p>
+{% endblock %}

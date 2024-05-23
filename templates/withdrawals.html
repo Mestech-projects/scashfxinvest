@@ -1,0 +1,79 @@
+<!-- withdrawals.html -->
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Withdrawals</title>
+  <link rel="stylesheet" href="/static/css/withdrawals.css">
+</head>
+<body style="background-image: url('/static/img/img/IMG-Django/mars.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+  <div class="container">
+    <h1>Withdrawals</h1>
+    <p>Welcome, {{ user_profile.user.username }}!</p>
+
+    <h2>Withdrawal Form</h2>
+    <form method="post" action="{% url 'mysite:withdrawals' %}">
+        <link rel="stylesheet" href="/static/img/img/css/app.css">
+
+      {% csrf_token %}
+      {{ withdrawal_form.as_p }}
+      <button type="submit">Withdraw Now</button>
+    </form>
+
+    {% if withdrawal_form.errors %}
+      <div class="error">
+        {% for error in withdrawal_form.errors %}
+          <p>{{ error }}</p>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <footer>
+      <p><a href="{% url 'mysite:invest' %}">Invest here</a></p>
+      <a href="{% url 'mysite:user_dashboard' %}">Go to User Dashboard</a>
+    </footer>
+  </div>
+  <footer>
+    <div class="foot_bo">
+    <a href="{% url 'mysite:invest'%}">
+        <img src="/static/img/img/footer/home.png"/>
+        <p class="xz">Home</p>
+    </a>
+  </div>
+        <div class="foot_bo">
+          <a href="{% url 'mysite:earnings' %}">
+        <img src="/static/img/img/footer/earning.png"/>
+        <p>Earnings</p>
+    </a>
+  </div>
+    <div class="foot_bo">
+  <a href="{% url 'mysite:spin' %}">
+    <img src="/static/img/img/footer/game.png" class="game1"/>
+    <p>Game</p>
+  </a>
+  </div>
+        <div class="foot_bo">
+    <a href="{% url 'mysite:share' %}">
+        <img src="/static/img/img/footer/share.png"/>
+        <p>Share</p>
+    </a>
+  </div>
+  
+    <div class="foot_bo">
+    <a href="{% url 'mysite:user_dashboard' %}">
+        <img src="/static/img/img/footer/mine.png"/>
+        <p>My</p>
+    </a>
+  </div>
+  
+  </footer>
+</body>
+</html>
+
+{% endblock %}

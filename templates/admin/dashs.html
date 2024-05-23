@@ -1,0 +1,76 @@
+{% if request.session.id == 0 %}
+    <script>
+        window.location.href = "{% url 'login' %}"
+    </script>
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+
+    <title>Admin</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container mt-2">
+    <h3>Administrator</h3>
+
+    <div class="card mt-3">
+        <div class="card-body">
+            <h5 class="card-title">Company Balance</h5>
+            <h3>{{ float_balance }} Kes</h3>
+        </div>
+    </div>
+
+    <div class="d-flex " style="justify-content: space-between; cursor: pointer;">
+
+        <div class="card mt-3 starter" style="width: 24%">
+            <div class="card-body">
+                <h5 class="text-muted">{{ deposits }}</h5>
+                <h6>Deposits</h6>
+            </div>
+        </div>
+        <div class="card mt-3 starter" style="width: 24%">
+            <div class="card-body">
+                <h5 class="text-muted">{{withdrawals}}</h5>
+                <h6>Withdrawals</h6>
+            </div>
+        </div>
+        <div class="card mt-3 starter" style="width: 24%">
+            <div class="card-body">
+                <h5 class="text-muted">{{clients}}</h5>
+                <h6>Clients</h6>
+            </div>
+        </div>
+        <div class="card mt-3 starter" style="width: 24%">
+            <div class="card-body">
+                <h5 class="text-muted">{{bind}}</h5>
+                <h6>Binds</h6>
+            </div>
+        </div>
+
+    </div>
+
+        <a href="{% url 'logout' %}" class="btn btn-danger mt-5 w-100">Logout</a>
+
+
+
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $(".starter").click(function(){
+            let page = $(this).find("h6").html()
+            window.location.href = page.toLowerCase()
+        })
+    })
+</script>
+</body>
+</html>

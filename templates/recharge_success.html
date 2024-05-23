@@ -1,0 +1,94 @@
+<!-- Your HTML file -->
+
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trust Pay</title>
+  <link rel="stylesheet" href="/static/img/img/css/recharge-succes.css">
+  <link rel="stylesheet" href="/static/img/img/css/app.css">
+
+</head>
+<body>
+  <div class="container">
+    <h1>Trust Pay</h1>
+    <p>Your recharge details:</p>
+
+    <p>Recharge Amount: {{ recharge_amount }}</p>
+    <p>Payment Option: {{ payment_option }}</p>
+    <p>Payment Details: {{ payment_details }}</p>
+
+    <!-- Copy buttons -->
+    {% if payment_option == 'mpesa' %}
+      <button class="copy-button" data-copy-target="id_payment_details">Copy M-pesa Number</button>
+    {% elif payment_option == 'till' %}
+      <button class="copy-button" data-copy-target="id_payment_details">Copy Till Number</button>
+    {% elif payment_option == 'binance' %}
+      <button class="copy-button" data-copy-target="id_payment_details">Copy Binance Address</button>
+    {% endif %}
+
+    <!-- User input for transaction message -->
+    <form method="post" action="{% url 'mysite:submit_transaction_message' %}">
+      {% csrf_token %}
+      <label for="transaction_message">Transaction Message:</label>
+      <input type="text" id="transaction_message" name="transaction_message" required>
+      <button type="submit">Submit Transaction Message</button>
+    </form>
+
+    <!-- Display transaction messages in admin page -->
+
+
+{% for message in transaction_messages %}
+  <p>{{ message.user.username }} - {{ message.message }}</p>
+{% endfor %}
+
+   
+
+    <!-- Link to User Dashboard -->
+    <footer>
+      <a href="{% url 'mysite:user_dashboard' %}">Go to User Dashboard</a>
+    </footer>
+  </div>
+  <footer>
+    <div class="foot_bo">
+    <a href="{% url 'mysite:invest'%}">
+        <img src="/static/img/img/footer/home.png"/>
+        <p class="xz">Home</p>
+    </a>
+</div>
+        <div class="foot_bo">
+          <a href="{% url 'mysite:earnings' %}">
+        <img src="/static/img/img/footer/earning.png"/>
+        <p>Earnings</p>
+    </a>
+</div>
+    <div class="foot_bo">
+<a href="{% url 'mysite:spin' %}">
+    <img src="/static/img/img/footer/game.png" class="game1"/>
+    <p>Game</p>
+</a>
+</div>
+        <div class="foot_bo">
+    <a href="share/index.html">
+        <img src="/static/img/img/footer/share.png"/>
+        <p>Share</p>
+    </a>
+</div>
+
+    <div class="foot_bo">
+    <a href="{% url 'mysite:user_dashboard' %}">
+        <img src="/static/img/img/footer/mine.png"/>
+        <p>My</p>
+    </a>
+</div>
+
+</footer>
+</body>
+</html>
+
+{% endblock %}

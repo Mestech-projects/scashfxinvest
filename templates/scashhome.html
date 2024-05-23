@@ -1,0 +1,252 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+
+  <!DOCTYPE html>
+<html class="pixel-ratio-3 retina android android-5 android-5-0 watch-active-state">
+<head>
+    <meta -equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta -equiv="pragma" content="no-cache">
+    <meta -equiv="cache-control" content="no-cache">
+    <meta -equiv="expires" content="0">
+    <title>Home  Scash Fx Invest</title>
+    <link rel="stylesheet" href="/static/img/img/css/app.css">
+	<link rel="stylesheet" href="/static/img/img/css/iconfont.css">
+    <link rel="stylesheet" href="/static/img/img/css/framework7.ios.min.css">
+    <link rel="stylesheet" href="/static/img/img/css/layer.css">
+    <script type="text/javascript" src="/static/img/img/js/TouchSlide..1.1.js"></script>
+    <script type="text/javascript" src="/static/img/img/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/static/img/img/js/layers.js"></script>
+	<script type="text/javascript" src="/static/img/img/js/layer.js"></script>
+
+    <style type="text/css">
+    *{margin:0;padding:0;list-style:none}
+	body{background:#fafafa}
+	.index_top_img img{height:10rem;width:100%}
+	.page-content{padding:20px 0 10px}
+	.bd .pic img{width:100%;height:200px}
+	.vip{background:#fc5f2e;color:#fff;font-size:10px;border-radius:8px;padding:2px 5px;margin-left:10px;letter-spacing:1px}
+	.earnings_list{padding:10px;margin-bottom:50px}
+	.earnings_item{margin:10px 0;background-color:#ffffff;border-radius:10px;padding:10px;position:relative}
+	.earnings_item_top{display:flex;flex-direction:row}
+	.earnings_item_btn{width:100%;height:2rem;background:linear-gradient(90deg,#4d49be,#4d49be);display:block;margin-top:1rem;font-size:14px;text-align:center;line-height:2rem;border-radius:2rem;color:#fff}
+	.earnings_item_btn_clos{width:100%;height:2rem;background:linear-gradient(90deg,#cdcdcd,#afafaf);display:block;margin-top:1rem;font-size:14px;text-align:center;line-height:2rem;border-radius:2rem;color:#fff}
+	.earnings_img{width:80px;height:80px}
+	.earnings_img img{width:100%;height:100%;border-radius:5px}
+	.earnings_message{padding-left:10px;width:calc(100% - 80px)}
+	.earnings_title{font-size:14px;font-weight:bold}
+	.earnings_bq{margin-top:10px}
+	.earnings_bq span{font-size:10px;background-color:#fdfaf4;color:#fc5f2e;padding:2px 3px;border-radius:20px;margin-right:2px}
+	.earnings_p{display:flex;flex-direction:row;margin-top:10px}
+	.earnings_p_box{width:50%}
+	.earnings_p_box span{font-size:20px;font-weight:bold;color:#4d49be}
+	.earnings_p_box div{font-size:12px;color:#979797}
+	.earnings_p_p1{text-decoration:line-through;color:#979797!important;font-size:16px!important}
+	.earnings_vip{}
+	.earnings_vip img{height:18px;width:60px}
+	.note_msg p{margin:10px 10px 0 0}
+	.note_msg{width:100%;max-height:60vh;overflow:auto}
+	.note_msg::-webkit-scrollbar{width:5px;height:1px}
+	.note_msg::-webkit-scrollbar-thumb{border-radius:5px;box-shadow:inset 0 0 5px rgba(0,0,0,0.2);background:#4d49be}
+	.note_msg::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0,0,0,0.2);border-radius:5px;background:#ededed}
+	@keyframes  shaking{0%{transform:rotate(0deg)}
+	10%{transform:rotate(9deg)}
+	20%{transform:rotate(-9deg)}
+	30%{transform:rotate(9deg)}
+	40%{transform:rotate(-9deg)}
+	50%{transform:rotate(0deg)}
+	}.shakings{-webkit-animation:shaking 0.5s linear infinite;animation:shaking 0.5s linear infinite}
+	.tipmian{position:relative}
+	.tip{display:block;background-color:red;color:#fff;font-size:12px;padding:1px 10px;font-weight:bold;border-radius:20px;position:absolute;right:5px;top:5px;z-index:100}
+	.mycount{font-size:12px;padding:3px 10px;background-color:#ff6300;color:#fff;position:absolute;right:0;border-radius:10px 0 0 10px}
+    .orgprice {text-decoration: line-through; color:#ff6300 }
+
+        .swiper-container .swiper-slide img {
+  height: 200px; /* Set the height of the images */
+  width: 100%; /* Ensure the width adjusts proportionally */
+}
+    </style>
+  
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- For favicon png -->
+  <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+       
+  <!--font-awesome.min.css-->
+  <link rel="stylesheet" href="/static/img/img/css/font-awesome.min.css">
+
+  <!--linear icon css-->
+<link rel="stylesheet" href="/static/img/img/css/linearicons.css">
+
+  <!--flaticon.css-->
+<link rel="stylesheet" href="/static/img/img/css/flaticon.css">
+
+<!--animate.css-->
+  <link rel="stylesheet" href="/static/img/img/css/animate.css">
+
+  <!--owl.carousel.css-->
+  <link rel="stylesheet" href="/static/img/img/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/static/img/img/css/owl.theme.default.min.css">
+
+  <!--bootstrap.min.css-->
+  <link rel="stylesheet" href="/static/img/img/css/bootstrap.min.css">
+
+<!-- bootsnav -->
+<link rel="stylesheet" href="/static/img/img/css/bootsnav.css" >	
+  
+  <!--style.css-->
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <!--responsive.css-->
+  <link rel="stylesheet" href="/static/img/img/css/responsive.css">
+
+</head>
+<body style="background:#f3f3f3">
+  
+      </form>
+  <div class="page-content">
+
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="model-search-content">
+            <div class="row">
+              <div class="col-md-offset-1 col-md-3 col-sm-12">
+                <div class="single-model-search">
+                    <img src="/static/img/img/cost.jpg" alt="img"/>
+                <h2>Costs kept low</h2>
+                <p>$0 platform fees, $0 commission and spreads from 0.0 pips to keep your money on market</p>
+                </div>
+              </div>
+              <div class="col-md-offset-1 col-md-3 col-sm-12">
+                      <img src="/static/img/img/customize.jpg" alt="img"/>	
+              <h2>Speedy & secure</h2>
+              <p>Trade with a regulated broker-free platform that offers fast execution on world-famous trading platforms.</p>
+              </div>
+              <div class="col-md-offset-1 col-md-3 col-sm-12"> 
+              
+                     <img src="/static/img/img/award.jpg" alt="img"/>  
+              <h2>Award-winning benefits</h2>
+              <p>24/6 customer support, built-in research tools, free training resources and networking events.</p>
+              </div>
+              </div>
+              
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+      
+    
+    <!-- Add more slides as needed -->
+  
+  <!-- Add pagination -->
+  <div class="swiper-pagination" style="display: none"></div>
+</div>
+  </div>
+  <div class="page-index-nav">
+    <div class="page-index-nav-ul">
+        <ul style="display: flex; justify-content: space-between">
+
+            <li>
+                <a href="{% url 'recharge' %}">
+                    <img src="/static/img/img/header/recharge.png"/>
+                    <p>Deposit/Withdraw</p>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'statements' %}">
+                    <img src="/static/img/img/header/notice.png"/>
+                    <p>Statements</p>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'team' %}">
+                    <img src="/static/img/img/header/team.png"/>
+                    <p>Team</p>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+ 
+
+
+
+
+
+    {% for option in products %}
+      <form method="post" action="{% url 'handleinvest' %}" >
+          {% csrf_token %}
+  <div class="earnings_item">
+<!--    <div class="mycount">Quota 0 / 5</div>-->
+<div class="earnings_item_top">
+  <div class="earnings_img">
+<!--      <div class="earnings_vip"><img src="{{ option.image }}" /> </div>-->
+ <img src="{{ option.image }}" alt="{{ option.amount }} Image">  </div>
+  <div class="earnings_message">
+    <div class="earnings_title">Coin</div>
+    <div class="earnings_bq">
+      <span>Total revenue cycle</span>
+      <span>{{ option.cycle }} days</span>
+    </div>
+    <div class="earnings_p">
+      <div class="earnings_p_box">
+        <span>ksh {{ option.daily_income }}</span>
+        <div>Day Income</div>
+      </div>
+      <div class="earnings_p_box">
+        <span>ksh {{ option.amount }}</span>
+        <div>Total income: <strong>{{ option.income }}</strong></div>
+
+      </div>
+    </div>
+  </div>
+</div>
+      <input type="hidden" value="{{ option.id }}" name="prodID">
+      <input type="hidden" value="{{ request.session.id }}" name="userID">
+<button class="earnings_item_btn" type="submit" style="border: 0; cursor: pointer;">Invest</button>
+  </div>
+      </form>
+    {% endfor %}
+
+      <br><br><br><br>
+
+
+
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 'auto', // Number of slides per view
+    spaceBetween: 10, // Space between slides
+    loop: true, // Enable loop mode
+    pagination: {
+      el: '.swiper-pagination', // Pagination element
+      clickable: true, // Enable clickable pagination
+    },
+    autoplay: {
+      delay: 2000, // Autoplay delay in milliseconds
+      disableOnInteraction: false, // Disable autoplay when user interacts with the slider
+    },
+  });
+</script>
+
+
+
+
+</body>
+</html>
+{% endblock %}

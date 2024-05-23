@@ -1,0 +1,794 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet">
+
+    <!-- title of site -->
+    <title>SCASHFXINVEST</title>
+
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png" />
+
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="...">
+
+    <!-- <link rel="stylesheet" href="/static/img/img/css/font-awesome.min.css"> -->
+
+    <!--linear icon css-->
+    <link rel="stylesheet" href="/static/img/img/css/linearicons.css">
+
+    
+  
+    <!--owl.carousel.css-->
+    <link rel="stylesheet" href="/static/img/img/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/img/img/css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/static/img/img/css/Styles.css">
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      <!-- For favicon png -->
+      <link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+           
+      <!--font-awesome.min.css-->
+      <link rel="stylesheet" href="/static/img/img/css/font-awesome.min.css">
+    
+      <!--linear icon css-->
+    <link rel="stylesheet" href="/static/img/img/css/linearicons.css">
+    
+      <!--flaticon.css-->
+    <link rel="stylesheet" href="/static/img/img/css/flaticon.css">
+    
+    <!--animate.css-->
+      <link rel="stylesheet" href="/static/img/img/css/animate.css">
+  
+      <!--bootstrap.min.css-->
+      <link rel="stylesheet" href="/static/img/img/css/bootstrap.min.css">
+    
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="/static/img/img/css/bootsnav.css" >	
+      
+      <!--style.css-->
+      <link rel="stylesheet" href="assets/css/style.css">
+      
+      <!--responsive.css-->
+      <link rel="stylesheet" href="/static/img/img/css/responsive.css">
+    
+    
+ 
+
+    <script type="text/javascript" src="/static/img/img/js/TouchSlide..1.1.js"></script>
+    <script type="text/javascript" src="/static/img/img/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="/static/img/img/js/layers.js"></script>
+	<script type="text/javascript" src="/static/img/img/js/layer.js"></script>
+
+    <style type="text/css">
+        *{margin:0;padding:0;list-style:none}
+        body{background:#fafafa}
+        .index_top_img img{height:10rem;width:100%}
+        .page-content{padding:20px 0 10px}
+        .bd .pic img{width:200px;height:200px}
+        .vip{background:#fc5f2e;color:#fff;font-size:10px;border-radius:8px;padding:2px 5px;margin-left:10px;letter-spacing:1px}
+        .earnings_list{padding:10px;margin-bottom:50px;}
+        .earnings_items_container {display: flex; flex-wrap: wrap;justify-content: space-between;}
+        .earnings_item{margin:10px 15px; background-color:#ffffff;border-radius:10px;padding:10px;  }
+        .earnings_item_top{display:flex;flex-direction: column}
+        .earnings_item_btn{width:200px;height:2rem;background:linear-gradient(90deg,#4d49be,#4d49be);display:block;margin-top:1rem;font-size:14px;text-align:center;line-height:2rem;border-radius:2rem;color:#fff}
+        .earnings_item_btn_clos{width:100%;height:2rem;background:linear-gradient(90deg,#cdcdcd,#afafaf);display:block;margin-top:1rem;font-size:14px;text-align:center;line-height:2rem;border-radius:2rem;color:#fff}
+        .earnings_img{width:200px;height:150px}
+        .earnings_img img{width:100%;height:100%;border-radius:5px}
+        .earnings_message{padding-left:10px;width:200px}
+        .earnings_title{font-size:14px;font-weight:bold}
+        .earnings_bq{margin-top:10px}
+        .earnings_bq span{font-size:10px;background-color:#fdfaf4;color:#fc5f2e;padding:2px 3px;border-radius:20px;margin-right:2px}
+        .earnings_p{display:flex;flex-direction:column;margin-top:10px}
+        .earnings_p_box{width:200px}
+        .earnings_p_box span{font-size:20px;font-weight:bold;color:#4d49be}
+        .earnings_p_box div{font-size:12px;color:#979797}
+        .earnings_p_p1{text-decoration:line-through;color:#979797!important;font-size:16px!important}
+        .earnings_vip img{height:18px;width:60px}
+        .note_msg p{margin:10px 10px 0 0}
+        .note_msg{width:100%;max-height:60vh;overflow:auto}
+        .note_msg::-webkit-scrollbar{width:5px;height:1px}
+        .note_msg::-webkit-scrollbar-thumb{border-radius:5px;box-shadow:inset 0 0 5px rgba(0,0,0,0.2);background:#4d49be}
+        .note_msg::-webkit-scrollbar-track{box-shadow:inset 0 0 5px rgba(0,0,0,0.2);border-radius:5px;background:#ededed}
+        @keyframes  shaking{0%{transform:rotate(0deg)}
+        10%{transform:rotate(9deg)}
+        20%{transform:rotate(-9deg)}
+        30%{transform:rotate(9deg)}
+        40%{transform:rotate(-9deg)}
+        50%{transform:rotate(0deg)}
+        }.shakings{-webkit-animation:shaking 0.5s linear infinite;animation:shaking 0.5s linear infinite}
+        .tipmian{position:relative}
+        .tip{display:block;background-color:red;color:#fff;font-size:12px;padding:1px 10px;font-weight:bold;border-radius:20px;position:absolute;right:5px;top:5px;z-index:100}
+        .mycount{font-size:12px;padding:3px 10px;background-color:#ff6300;color:#fff;position:absolute;right:0;border-radius:10px 0 0 10px}
+        .orgprice {text-decoration: line-through; color:#ff6300 }
+    
+            .swiper-container .swiper-slide img {
+      height: 200px; /* Set the height of the images */
+      width: 100%; /* Ensure the width adjusts proportionally */
+
+      
+    }
+
+
+
+.cont{   
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+
+}
+.welcome-hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.custm-navbar {
+    position: relative;
+    background-image: url(/static/img/img/welcome-banner.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 30px 35px;
+    color: #fff; 
+    justify-content: space-between;
+    align-items: right;
+   
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Adjust the overlay color and opacity as needed */
+        z-index: -1;
+    }
+}
+
+/* Style the navigation links */
+.custm-navbar a {
+    color: #fff; /* Text color */
+    text-decoration: none;
+    padding: 20px 25px;
+    align-items: end;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.custm-navbar a:hover {
+    background-color: rgba(62, 62, 244, 0.317); /* Hover background color and opacity */
+}
+
+
+.navbar-brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff; /* Change this to your desired text color */
+    text-decoration: none;
+}
+
+
+  /* Your existing styles remain unchanged */
+
+  .navbar {
+    background-color: #01002445; /* Set the background color for the navbar */
+    padding: 10px 20px;
+  
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+  }
+
+  .navbar a {
+    color: #fff; /* Text color */
+    text-decoration: none;
+    padding: 10px 15px; /* Adjust padding as needed */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+  }
+
+  .navbar a:hover {
+    background-color: rgba(62, 62, 244, 0.317); /* Hover background color and opacity */
+  }
+
+  .navbar-toggler {
+    display: none;
+  }
+
+  /* Add a media query for screens smaller than 768px */
+  @media only screen and (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+      padding-top: 60px; /* Adjust top padding to avoid overlap with the content */
+    }
+
+    .navbar a {
+      display: block;
+      width: 100%;
+      padding: 15px 20px; /* Adjust padding for smaller screens */
+      border-bottom: 1px solid #555; /* Add a border between menu items */
+    }
+
+    .navbar-toggler {
+      display: block;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 10px;
+      margin-top: 10px; /* Adjust top margin as needed */
+    }
+
+    .navbar-toggler .bar {
+      height: 3px;
+      width: 25px;
+      background-color: #ff0000;
+      margin: 5px 0;
+      border-radius: 20px;
+      display: block;
+    }
+  }
+
+ </style>
+
+
+</head>
+
+<body class="wrapper">
+    
+    <!--welcome-hero start -->
+<section id="home" style="background-image: url('/static/img/img/welcome-banner.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;" >
+   
+   
+    <button class="navbar-toggler" id="navbarToggleBtn">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+<div class="navbar" id="navbar">
+    
+    <div class="earnings_items_container" id="navbarItems">
+        <a class="navbar-brand" href="{% url 'home' %}"><span>SCASH</span></a>
+   
+      <ul class="custm-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+        
+        <li class="nav-item active"> <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li><a class="nav-link" href="{% url 'help' %}">Care Desk</a></li>
+                    <li><a class="nav-link" href="{% url 'share' %}">Share</a></li>
+                </ul> 
+                <ul class="custm-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+                    <li><a class="nav-link"href="{% url 'profile' %}">Profile</a></li>
+                </ul>
+                    
+                <div class="welcome-hero-txt">
+                    <h2>instant access to investing, anytime and anywhere</h2>
+                    <p>Start your investment journey we're here to guide you </p>
+                
+                    <div class="col-10 col-lg-12 col-md-12">
+                        <div class="welcome-content">
+                            hi
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    
+]</section>
+    <!--/.welcome-hero-->
+    <!--welcome-hero end -->
+    <!-- products start -->
+    <div class="section-header">
+        <h2>Investment Plans</h2>
+        <!-- section header -->
+    </div>
+
+<div class="earnings_items_container">
+
+    
+{% for option in products %}
+<form method="post" action="{% url 'handleinvest' %}" >
+    {% csrf_token %}
+<div class="earnings_item">
+<!--    <div class="mycount">Quota 0 / 5</div>-->
+<div class="earnings_item_top">
+<div class="earnings_img">
+<!--      <div class="earnings_vip"><img src="{{ option.image }}" /> </div>-->
+<img src="{{ option.image }}" alt="{{ option.amount }} Image">  </div>
+<div class="earnings_message">
+<div class="earnings_title">Coin</div>
+<div class="earnings_bq">
+<span>Total revenue cycle</span>
+<span>{{ option.cycle }} days</span>
+</div>
+<div class="earnings_p">
+<div class="earnings_p_box">
+  <span>ksh {{ option.daily_income }}</span>
+  <div>Day Income</div>
+</div>
+<div class="earnings_p_box">
+  <span>ksh {{ option.amount }}</span>
+  <div>Total income: <strong>{{ option.income }}</strong></div>
+
+</div>
+</div>
+</div>
+</div>
+<input type="hidden" value="{{ option.id }}" name="prodID">
+<input type="hidden" value="{{ request.session.id }}" name="userID">
+<button class="earnings_item_btn" type="submit" style="border: 0; cursor: pointer;">Invest</button>
+</div>
+</form>
+{% endfor %}
+
+
+
+</div>
+
+
+
+    <!--service start -->
+
+    <section id="service" class="service">
+        <p><h1>Why invest with scashfxinvest?</h1></p>
+        <div class="container">
+            <div class="service-content">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-3 col-sm-12">
+                            <div class="single-service-item">
+                                <div class="single-service-icon">
+                                    <img src="/static/img/img/winning.png" alt="img" />
+                                </div>
+                                <h2><a href="#">Award-winning platform</a></h2>
+                                <p>
+                                    Award-winning software recognized and praised by the most respected experts of the
+                                    industry.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="single-service-item">
+                                <div class="single-service-icon">
+                                    <img src="/static/img/img/cust.png" alt="img" />
+                                </div>
+                                <h2><a href="#">Customizable interface</a></h2>
+                                <p>
+                                    Customize the platform to make it fit better to your needs — from chart type to
+                                    color theme.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="single-service-item">
+                                <div class="single-service-icon">
+                                    <img src="/static/img/img/with.png" alt="img" />
+                                </div>
+                                <h2><a href="#">Convenient withdrawals</a></h2>
+                                <p>
+                                    Withdraw your money in an instant using a wide range of available payment systems
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-12">
+                            <div class="single-service-item">
+                                <div class="single-service-icon">
+                                <img src="/static/img/img/supp.png" alt="img"/> 
+                                </div>
+                                <h2><a href="#">Support 24/7</a></h2>
+                                <p>
+                                    A team of professionals speaking your mother tongue are always here to support you.
+                                </p>
+                            </div>
+                            </div>
+
+                        
+                        
+                        <!-- service -end -->
+                        
+                        <!--new-cars start -->
+                        <section id="new-cars" class="new-cars">
+                            <div class="container">
+                                <div class="section-header">
+                                    <p>huge <span> Knowledge</span> hub</p>
+                                    <h2>more reasons to trade with us</h2>
+                                </div><!--/.section-header-->
+                                <div class="new-cars-content">
+                                    <div class="owl-carousel owl-theme" id="new-cars-carousel">
+                                        <div class="new-cars-item">
+                                            <div class="single-new-cars-item">
+                                                <div class="row">
+                                                    <div class="col-md-7 col-sm-12">
+                                                        <div class="new-cars-img">
+                                                            <img src="/static/img/img/graph.jpg" alt="img"/>
+                                                        </div><!--/.new-cars-img-->
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-12">
+                                                        <div class="new-cars-txt">
+                                                            <h2><a href="#">Market news and<span> tools</span></a></h2>
+                                                            <p>
+                                                                Weekly video updates from our dedicated Market Analysis team
+                                                               Powerful calculators, converters and other trading tools at your fingertips
+                
+                                                            </p>
+                                                            <p class="new-cars-para2">
+                                                                Extensive range of tools and widgets to help you decipher every trend 
+                                                            </p>
+                                                            <button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+                                                                view details
+                                                            </button>
+                                                        </div><!--/.new-cars-txt-->	
+                                                    </div><!--/.col-->
+                                                </div><!--/.row-->
+                                            </div><!--/.single-new-cars-item-->
+                                        </div><!--/.new-cars-item-->
+                                        <div class="new-cars-item">
+                                            <div class="single-new-cars-item">
+                                                <div class="row">
+                                                    <div class="col-md-7 col-sm-12">
+                                                        <div class="new-cars-img">
+                                                            <img src="/static/img/img/grow.jpg" alt="img"/>
+                                                        </div><!--/.new-cars-img-->
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-12">
+                                                        <div class="new-cars-txt">
+                                                            <h2><a href="#">Built around you</a></h2>
+                                                            <p>
+                                                                Wherever you are, we speak your language.
+                                                                Friendly Account Managers to guide you on  your journey
+                
+                                                            </p>
+                                                            <p class="new-cars-para2">
+                                                                Deposit and withdrawal methods that work for you – it’s your money, after all.
+                                                            </p>
+                                                            <button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+                                                                view details
+                                                            </button>
+                                                        </div><!--/.new-cars-txt-->	
+                                                    </div><!--/.col-->
+                                                </div><!--/.row-->	
+                                            </div><!--/.single-new-cars-item-->
+                                        </div><!--/.new-cars-item-->
+                                        <div class="new-cars-item">
+                                            <div class="single-new-cars-item">
+                                                <div class="row">
+                                                    <div class="col-md-7 col-sm-12">
+                                                        <div class="new-cars-img">
+                                                            <img src="/static/img/img/chart.jpg" alt="img"/>
+                                                        </div><!--/.new-cars-img-->
+                                                    </div>
+                                                    <div class="col-md-5 col-sm-12">
+                                                        <div class="new-cars-txt">
+                                                            <h2><a href="#">Forex trading</a></h2>
+                                                            <p>
+                                                                Forex trading is considered as one of the largest and most liquid markets in the world. According to a recent triennial report from the Bank for International Settlements (a global bank for national central banks), the dollar amount of daily transactions in the Forex market is around USD 5 trillion and $1.5 trillion of this amount comes from spot trading.
+                                                            </p>
+                                                            <p class="new-cars-para2">
+                                                                This volatility can be difficult because of the limited decision time, that is why dedicated investor teams tend to be more successful than “side traders”
+                                                            </p>
+                                                            <button class="welcome-btn new-cars-btn" onclick="window.location.href='#'">
+                                                                view details
+                                                            </button>
+                                                        </div><!--/.new-cars-txt-->	
+                                                    </div><!--/.col-->
+                                                </div><!--/.row-->
+                                            </div><!--/.single-new-cars-item-->
+                                        </div><!--/.new-cars-item-->
+                                    </div><!--/#new-cars-carousel-->
+                                </div><!--/.new-cars-content-->
+                            </div><!--/.container-->
+                
+                        </section><!--/.new-cars-->
+                        <!--new-cars end -->
+        
+
+              
+		<!-- clients-say strat -->
+		<section id="clients-say"  class="clients-say">
+			<div class="container">
+				<div class="section-header">
+					<h2>what our clients say</h2>
+				</div><!--/.section-header-->
+				<div class="row">
+					<div class="owl-carousel testimonial-carousel">
+						<div class="col-sm-24 col-xs-12" style="height: 100px;">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="/static/img/img/c1.png" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											Fell in love with the site the moment I saw it. its clean and simple design was what sealed the deal for me 
+										</p>
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">ashish khatri</a></h2>
+										<h4>new york</h4>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+						<div class="col-sm-24 col-xs-12">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="/static/img/img/c2.png" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											I've learnt alot about the financial markets while working with this company. Now I can invest and earn money. 
+										</p>
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">matt johnson</a></h2>
+										<h4>london</h4>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+						<div class="col-sm-24 col-xs-12">
+							<div class="single-testimonial-box">
+								<div class="testimonial-description">
+									<div class="testimonial-info">
+										<div class="testimonial-img">
+											<img src="/static/img/img/c3.png" alt="image of clients person" />
+										</div><!--/.testimonial-img-->
+									</div><!--/.testimonial-info-->
+									<div class="testimonial-comment">
+										<p>
+											Contancting support was simple and easy. I was surprised by how quickly they get back to you. 
+										</p>
+									</div><!--/.testimonial-comment-->
+									<div class="testimonial-person">
+										<h2><a href="#">brian murphy</a></h2>
+										<h4>washington</h4>
+									</div><!--/.testimonial-person-->
+								</div><!--/.testimonial-description-->
+							</div><!--/.single-testimonial-box-->
+						</div><!--/.col-->
+					</div><!--/.testimonial-carousel-->
+				</div><!--/.row-->
+			</div><!--/.container-->
+
+		</section><!--/.clients-say-->	
+		<!-- clients-say end -->
+		<div class="striples-bg">
+        <!-- ##### Team Area Start ##### -->
+		
+		
+
+		<!-- end of contact us -->
+
+        <!--brand strat -->
+		<section id="brand"  class="brand">
+			<div class="container">
+				<div class="brand-area">
+					<div class="owl-carousel owl-theme brand-item">
+						<div class="item">
+							<a href="#">
+								<img src="/static/img/img/dash.png" alt="brand-image" />
+							</a>
+						</div><!--/.item-->
+						<div class="item">
+							<a href="#">
+								<img src="/static/img/img/zcash.png" alt="brand-image" />
+							</a>
+						</div><!--/.item-->
+						<div class="item">
+							<a href="#">
+								<img src="/static/img/img/dogecoin.png" alt="brand-image" />
+							</a>
+						</div><!--/.item-->
+						<div class="item">
+							<a href="#">
+								<img src="/static/img/img/bitcoincash.png" alt="brand-image" />
+							</a>
+						</div><!--/.item-->
+
+						<div class="item">
+							<a href="#">
+								<img src="/static/img/img/bitcoin.png" alt="brand-image" />
+							</a>
+						</div><!--/.item-->
+
+						<div class="item">
+							<a href="#">
+								<img src="/static/img/binance.png" alt="brand-image" />
+							</a>
+						</div><!--/.item-->
+					</div><!--/.owl-carousel-->
+				</div><!--/.clients-area-->
+
+			</div><!--/.container-->
+
+		</section><!--/brand-->	
+		<!--brand end -->
+
+		<!--blog start -->
+		<section id="blog" class="blog"></section><!--/.blog-->
+		<!--blog end -->
+
+		<!--contact start-->
+		<footer id="contact"  class="contact" >
+			<div class="container">
+				<div class="footer-top">
+					<div class="row">
+						<div class="col-md-3 col-sm-6">
+							<div class="single-footer-widget">
+								<div class="footer-logo">
+									<a href="home.php">scashfxinvest</a>
+								</div>
+								<p>
+									scashfxinvest LLC<br>
+Registration No. L 22204
+Address: Lighthouse Trust Nevis Ltd, Suite 1, A.L. Evelyn Ltd Building, Main Street, Charlestown, Nevis
+								</p>
+								<div class="footer-contact">
+									<p>info@scashfxinvest.com</p>
+									<p>+1 (885) 2563154554</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2 col-sm-6">
+							<div class="single-footer-widget">
+								<h2>about scashfxinvest</h2>
+								<ul>
+									<li><a href="#">about us</a></li>
+									<li><a href="#">career</a></li>
+									<li><a href="http://localhost/CodeIgniter-proinvest/terms">terms <span> of service</span></a></li>
+									<li><a href="http://localhost/CodeIgniter-proinvest/privacy">privacy policy</a></li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-md-3 col-xs-12">
+							<div class="single-footer-widget">
+								<h2>top crypto coins and wallets</h2>
+								<div class="row">
+									<div class="col-md-7 col-xs-6">
+										<ul>
+											<li><a href="#">bitcoin</a></li>
+											<li><a href="#">ethereum</a></li>
+											<li><a href="#">litecoin</a></li>
+											<li><a href="#">tether</a></li>
+											<li><a href="#">dogecoin</a></li>
+											<li><a href="#">binance coin</a></li>
+										</ul>
+									</div>
+									<div class="col-md-5 col-xs-6">
+										<ul>
+											<li><a href="#">payeer</a></li>
+											<li><a href="#">binance</a></li>
+											<li><a href="#">paypal</a></li>
+											<li><a href="#">yellow card</a></li>
+											<li><a href="#">mara</a></li>
+											<li><a href="#">celo</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-offset-1 col-md-3 col-sm-6">
+							<div class="single-footer-widget">
+								<h2>news letter</h2>
+								<div class="footer-newsletter">
+									<p>
+										Subscribe to get latest news<br>
+										Email: info@scashfxinvest.com
+									</p>
+								</div>
+								<div class="hm-foot-email">
+									<div class="foot-email-box">
+										<input type="text" class="form-control" placeholder="Add Email">
+									</div><!--/.foot-email-box-->
+									<div class="foot-email-subscribe">
+										<span><i class="fa fa-arrow-right"></i></span>
+									</div><!--/.foot-email-icon-->
+								</div><!--/.hm-foot-email-->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer-copyrght">
+					<div class="row">
+						<div class="col-sm-6">
+							<p>
+								&copy; copyright.designed and developed by <a href="#">techguru</a>.
+							</p><!--/p-->
+						</div>
+						<div class="col-sm-6">
+							<div class="footer-social">
+								<a href="#"><i class="fa fa-facebook"></i></a>	
+								<a href="#"><i class="fa fa-instagram"></i></a>
+								<a href="#"><i class="fa fa-linkedin"></i></a>
+								<a href="#"><i class="fa fa-pinterest-p"></i></a>
+								<a href="#"><i class="fa fa-behance"></i></a>	
+							</div>
+						</div>
+					</div>
+				</div><!--/.footer-copyright-->
+			</div><!--/.container-->
+
+			<div id="scroll-Top">
+				<div class="return-to-top">
+					<i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+				</div>
+				
+			</div><!--/.scroll-Top-->
+			
+        </footer><!--/.contact-->
+		<!--contact end-->
+
+
+		
+		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+		<script src="/static/img/img/js/jquery.js"></script>
+        
+        <!--modernizr.min.js-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+		
+		<!--bootstrap.min.js-->
+        <script src="/static/img/img/js/bootstrap.min.js"></script>
+		
+		<!-- bootsnav js -->
+		<script src="/static/img/img/js/bootsnav.js"></script>
+
+		<!--owl.carousel.js-->
+        <script src="/static/img/img/js/owl.carousel.min.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+        <!--Custom JS-->
+        <script src="/static/img/img/js/custom.js"></script>
+        
+    
+	
+
+
+
+    <div class="clearfix"></div>
+
+    <div class="clearfix"></div>
+    <script>
+        // Add this script to handle the toggle functionality
+        const toggleBtn = document.getElementById('navbarToggleBtn');
+        const navbarItems = document.getElementById('navbarItems');
+      
+        toggleBtn.addEventListener('click', () => {
+          navbarItems.classList.toggle('active');
+        });
+      </script>
+
+</body>
+</html>
+
+                        
+{% endblock %}

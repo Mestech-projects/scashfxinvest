@@ -1,0 +1,8 @@
+{% extends 'mysite/base.html' %}
+
+{% block content %}
+  <h1>Error</h1>
+  <p>There was an error processing your request.</p>
+  <!-- You can add more details or instructions based on your needs -->
+  <p><a href="{% url 'mysite:user_dashboard' %}">Go back to User Dashboard</a></p>
+{% endblock %}

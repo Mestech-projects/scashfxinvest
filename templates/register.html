@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-cvtgOeYG2g06i8Uo6vLCqtSP3Gcx6FYYhMlFvWZfdFiYLuGf7qU3sRP4X3sAJhq24bK+j9uNcl2mR99+/1HZ5A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <!-- <link rel="stylesheet" href="/static/img/img/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="...">
+
+<style >
+        body {
+    background-image: url('/static/img/img/body/login.jpg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    margin: 0; 
+    
+    
+}
+
+.container {
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f9faff;
+  border: none;
+  align-items: center;
+  border-radius: 10px;
+ 
+}
+.card {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding:10px 15px;
+  width: 200px;
+  border: none;
+  background-color: #fdfdfd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  color: rgb(32, 27, 132);
+
+  
+}
+button {
+  background-color: #21209C;
+  margin-bottom: 10px;
+  margin-bottom: 10px;
+  margin-top: 15px;
+  text-align: center;
+  width: 450px;
+  color: #FFFFFF;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color:#08c;
+  color: #141310;
+}
+ /* Media query for screens smaller than 768px (typical tablets and phones) */
+ @media only screen and (max-width: 768px) {
+        .container {
+            max-width: 100%; 
+        }
+
+        button {
+            width: 100%; 
+        }
+        }
+        span{
+        background-color: #2600ff;
+        margin-bottom: 2px;
+        text-align: center;
+        margin-left: 20px;
+        width: 400px;
+        color: #0a0a0a;
+        padding:20px 25px;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        }
+
+        /* .form-control{
+        margin-bottom: 20px;
+        margin-top: 20px;
+        margin-left: 20px;
+        padding:10px 15px;
+        width: 50%;
+        border: none;
+        background-color: #fdfdfd;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        color: rgb(24, 20, 103);
+
+        } */
+        /*  CAPTCHA  */
+         #captcha-container {
+
+              display: flex;
+              align-items: center;
+          }
+
+          #captcha-input {
+              margin-right: 10px;
+          }
+
+          #refresh-captcha {
+              cursor: pointer;
+              color: rgb(252, 252, 254);
+          }
+          #captcha-display {
+              display: inline-block;
+              background-color: maroon;
+              padding: 5px;
+              font-size: 1.5em;
+              color: white;
+              filter: blur(2px); /* Apply blur effect */
+              position: relative;
+          overflow: hidden;
+
+          }
+</style>
+    <script>
+        window.onload = function () {
+            // Function to get URL parameter by name
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                    results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+     
+            // Retrieve the referral code from the URL
+            var referralCodeFromUrl = getParameterByName('referral_code');
+    
+            // Check if the referral code is present in the URL
+            if (referralCodeFromUrl) {
+                // Set the referral code in the registration form field
+                document.getElementById('referral_code').value = referralCodeFromUrl;
+            }
+        };
+    </script>
+    
+</head>
+<body style="background-image: url('/static/IMG-Django/network-chain.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+
+    
+              <div class="container">
+                    <div class="container">
+                        <h4 class="text-muted">Welcome To Scash Fx Invest</h4>
+                    </div>
+                    
+                        <h2>Register</h2>
+                      
+                <form method="post" action="{% url 'handleregister' %}" id="regForm">
+
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'success' %}
+                                <div class="alert alert-success" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+                    <!-- Display error message if any -->
+                    {% if messages %}
+                        {% for message in messages %}
+                            {% if message.tags == 'error' %}
+                                <div class="alert alert-danger" role="alert">
+                                    {{ message }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+
+
+                            {% csrf_token %}
+
+                            <input type="text" name="username" id="username" required placeholder="Name" class="card"><br><br>
+                            {{ form.username }}
+
+                            <input type="text" name="phone_number" id="phone_number" required placeholder="Phone Number" class="card" ><br><br>
+                            {{ form.phone_number }}
+                            <input type="text" name="password1" id="password1" required placeholder="Password" class="card"><br><br>
+                            {{ form.password1}}
+
+                            <input type="text" name="password2" id="password2" required placeholder="Confirm Password" class="card"><br><br>
+                            {{ form.password2}}
+
+
+                            <div >
+                            <div id="captcha-container">
+                              <input type="text" required id="captcha-input" placeholder="Enter captcha" class="card">
+                              <span id="captcha-display"></span>
+                              <button  id="refresh-captcha" class="btn btn-sm btn-primary text-white" type="button" onclick="generateCaptcha()">Refresh</button >
+                            </div>
+                          </div>
+
+                            <input type="text" name="referral_code" id="referral_code" readonly placeholder="Referral Code" class="card"><br><br>
+                            {{ form.referral_code}}
+
+                               <button type="submit" class="btn btn-primary">Register</button><br><br>
+                        </form>
+                                                        
+
+                               <P>Have an account?</P>
+                                <a href="{% url 'login' %}" >
+                                    <button>Login</button></a>
+                       
+                                </div>
+                            
+                                
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.sendNow').click(function(){
+            if($('#captcha-input').val() === $('#captcha-display').text()){
+             $('.snd').click();
+            }else{
+                alert("Incorrect Captcha");
+                generateCaptcha(); 
+            }
+        })
+    });
+
+    $(document).ready(function(){
+  // Generate a random 4-digit number
+    var captchaNumber = Math.floor(1000 + Math.random() * 9000);
+
+    // Display the captcha number
+    document.getElementById('captcha-display').innerText = captchaNumber;
+
+    // Clear the input field
+    document.getElementById('captcha-input').value = '';
+  })
+
+  function generateCaptcha(){
+    var captchaNumber = Math.floor(1000 + Math.random() * 9000);
+
+    // Display the captcha number
+    document.getElementById('captcha-display').innerText = captchaNumber;
+
+    // Clear the input field
+    document.getElementById('captcha-input').value = '';
+  }
+</script>
+</body>
+</html>

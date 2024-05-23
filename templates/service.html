@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=a, initial-scale=1.0">
+    <title>Service</title>
+    <link rel="stylesheet" href="/static/img/img/css/app.css">
+    <style>
+        .item{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: aliceblue;
+
+
+        }
+
+        .image-container {
+            max-width: 80%;
+            max-height: 400px;
+            /* overflow: hidden; */
+            align-items: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto; /* Center the image horizontally within the container */
+            
+        }
+        .h1{
+            color: navy;
+            text-decoration: underline;
+         
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+    <h1 class="h1">Contact support</h1>
+    
+    <a href="http://t.me/+8qDU8NG7EtowMDNk" class="item">
+        <img src="/static/img/img/header/telegram.png" class="image-container img" alt="TG logo">
+    </a>
+    </div>
+    <div class="item">
+        <h1 class="h1">Join Telegram Group</h1>
+        
+        <a href="https://t.me/reifcare" class="item">
+            <img src="/static/img/img/header/telegram.png" class="image-container img" alt="TG logo">
+        </a>
+        </div>
+
+    
+</body>
+</html>
+
+{% endblock %}

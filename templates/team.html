@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="/static/img/img/css/team.css"> -->
+    <link rel="stylesheet" href="/static/img/img/css/Dashboards.css">
+    <link rel="stylesheet" href="/static/img/img/css/app.css">
+    <title>Team</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body style="background-image: url('/static/img/img/IMG-Django/mars.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+
+    <div class="container mt-3">
+        <h4 class="text-muted">My referrals</h4>
+
+        <div class="card">
+            <div class="card-header">
+                <p class="text-primary"><strong>Level One</strong></p>
+            </div>
+            <div class="card-body">
+            {% if levelOne %}
+                <table class="table table-striped">
+                    <thead>
+                        <th>Name</th>
+                        <th>Date Created</th>
+                    </thead>
+                    <tbody>
+                        {% for level in levelOne %}
+                            <tr>
+                                <td>{{ level.name }}</td>
+                                <td>{{ level.date }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No data available</p>
+            {% endif %}
+        </div>
+
+        </div>
+
+        <div class="card mt-3">
+            <div class="card-header">
+                <p class="text-primary"><strong>Level Two</strong></p>
+            </div>
+            <div class="card-body">
+            {% if levelTwo %}
+                <table class="table table-striped">
+                    <thead>
+                        <th>Name</th>
+                        <th>Date Created</th>
+                    </thead>
+                    <tbody>
+                        {% for level in levelTwo %}
+                            <tr>
+                                <td>{{ level.name }}</td>
+                                <td>{{ level.date }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No data available</p>
+            {% endif %}
+        </div>
+
+        </div>
+
+    </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
